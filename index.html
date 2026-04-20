@@ -876,6 +876,142 @@ footer {
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
 
+/* ═══ WAITLIST MODAL ═══ */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(26, 31, 46, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-backdrop.open { opacity: 1; visibility: visible; }
+.modal {
+  background: var(--cream);
+  border: 1px solid var(--line2);
+  border-radius: 24px;
+  max-width: 480px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  padding: 40px;
+  position: relative;
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.35s var(--ease);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+.modal-backdrop.open .modal { transform: translateY(0) scale(1); }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--surface2); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s var(--ease);
+  font-size: 16px; color: var(--t2);
+}
+.modal-close:hover { background: var(--cream2); color: var(--ink); }
+
+.modal-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber-dim); border: 1px solid rgba(194,65,12,0.2);
+  border-radius: 100px; padding: 5px 13px 5px 9px; margin-bottom: 16px;
+}
+.modal-tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); animation: blink 2s infinite; }
+.modal-tag-text { font-family: var(--fm); font-size: 10px; color: var(--amber2); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.modal-title {
+  font-family: var(--fd); font-size: 32px; font-weight: 500;
+  line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.modal-title em { font-style: italic; color: var(--amber); font-weight: 400; }
+.modal-sub { font-size: 14px; color: var(--t2); line-height: 1.6; margin-bottom: 26px; }
+
+.modal-form { display: flex; flex-direction: column; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label {
+  font-family: var(--fm); font-size: 10px; color: var(--t2);
+  letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500;
+}
+.field input, .field select {
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line2);
+  border-radius: 10px;
+  font-family: var(--fb); font-size: 14px; color: var(--ink);
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  outline: none;
+}
+.field input:focus, .field select:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(194,65,12,0.1);
+}
+.field select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235b6478' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+.field-checkbox {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.field-checkbox:hover { border-color: var(--line2); background: var(--cream2); }
+.field-checkbox input { margin-top: 3px; cursor: pointer; accent-color: var(--amber); }
+.field-checkbox label {
+  font-size: 13px; color: var(--ink2); line-height: 1.5;
+  cursor: pointer; font-family: var(--fb); letter-spacing: normal; text-transform: none;
+}
+.field-checkbox label strong { color: var(--amber); font-weight: 600; }
+
+.modal-submit {
+  margin-top: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px;
+  background: var(--ink); color: var(--cream);
+  border: none; border-radius: 100px;
+  font-family: var(--fb); font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: all 0.25s var(--ease);
+}
+.modal-submit:hover:not(:disabled) { background: var(--ink2); transform: translateY(-1px); }
+.modal-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.modal-submit .spinner-w {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid rgba(245,241,232,0.3);
+  border-top-color: var(--cream);
+  animation: spin 0.7s linear infinite; display: none;
+}
+.modal-submit.loading .spinner-w { display: block; }
+.modal-submit.loading .submit-text { opacity: 0.7; }
+
+.modal-note {
+  font-size: 11px; color: var(--t3);
+  text-align: center; margin-top: 12px;
+  font-family: var(--fm); letter-spacing: 0.02em;
+}
+
+/* Success state */
+.modal-success {
+  display: none;
+  text-align: center;
+  padding: 20px 0 10px;
+}
+.modal-success.show { display: block; animation: slide 0.4s var(--ease); }
+.success-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--sage-dim); border: 1px solid rgba(63,125,92,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; color: var(--sage); margin: 0 auto 20px;
+}
+.success-title {
+  font-family: var(--fd); font-size: 28px; font-weight: 500;
+  letter-spacing: -0.015em; margin-bottom: 10px;
+}
+.success-title em { font-style: italic; color: var(--amber); font-weight: 400; }
+.success-msg { font-size: 14px; color: var(--t2); line-height: 1.65; margin-bottom: 20px; }
+.success-msg strong { color: var(--ink); font-weight: 600; }
+
 @media (max-width: 960px) {
   .nav-links { display: none; }
   .demo-body { grid-template-columns: 1fr; }
@@ -1521,6 +1657,75 @@ footer {
   </div>
 </footer>
 
+<!-- ═══ WAITLIST MODAL ═══ -->
+<div class="modal-backdrop" id="waitlistModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+
+    <!-- Form view -->
+    <div id="modalForm">
+      <div class="modal-tag">
+        <span class="modal-tag-dot"></span>
+        <span class="modal-tag-text">Join the Waitlist</span>
+      </div>
+      <h3 class="modal-title">Get <em>early access</em><br>to Sumext.</h3>
+      <p class="modal-sub">Tell us a bit about your firm. We'll reach out within 24 hours with your beta access link and a personal walkthrough.</p>
+
+      <form class="modal-form" id="waitlistForm" onsubmit="submitForm(event)">
+        <div class="field">
+          <label for="wl-name">Full Name</label>
+          <input type="text" id="wl-name" name="name" required placeholder="John Smith">
+        </div>
+        <div class="field">
+          <label for="wl-email">Work Email</label>
+          <input type="email" id="wl-email" name="email" required placeholder="john@firm.com">
+        </div>
+        <div class="field">
+          <label for="wl-company">Company / Firm Name</label>
+          <input type="text" id="wl-company" name="company" required placeholder="Smith Accounting Ltd.">
+        </div>
+        <div class="field">
+          <label for="wl-software">Accounting Software You Use</label>
+          <select id="wl-software" name="accounting_software" required>
+            <option value="">Select your software...</option>
+            <option value="Xero">Xero</option>
+            <option value="QuickBooks">QuickBooks</option>
+            <option value="Zoho Books">Zoho Books</option>
+            <option value="Tally">Tally</option>
+            <option value="MYOB">MYOB</option>
+            <option value="Sage">Sage</option>
+            <option value="FreshBooks">FreshBooks</option>
+            <option value="Wave">Wave</option>
+            <option value="Multiple">Multiple platforms</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <label class="field-checkbox">
+          <input type="checkbox" id="wl-beta" name="early_beta" value="Yes">
+          <label for="wl-beta">I'd like <strong>early beta access</strong> — free for the first 3 months</label>
+        </label>
+
+        <button type="submit" class="modal-submit" id="submitBtn">
+          <div class="spinner-w"></div>
+          <span class="submit-text">Request Access →</span>
+        </button>
+        <div class="modal-note">No spam. We'll only email you about Sumext.</div>
+      </form>
+    </div>
+
+    <!-- Success view -->
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">✓</div>
+      <h3 class="success-title">You're <em>in!</em></h3>
+      <p class="success-msg">We just received your request. <strong>Saeed will personally reach out within 24 hours</strong> with your beta access and a quick walkthrough.</p>
+      <p class="success-msg" style="font-size: 13px;">Meanwhile, follow us on LinkedIn for product updates.</p>
+      <button class="modal-submit" onclick="closeModal()" style="background: var(--amber);">
+        <span class="submit-text">Close</span>
+      </button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ═══ DEMO SYSTEM - Now works with simulation fallback ═══
 
@@ -1680,6 +1885,99 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // Run init
 init();
+
+// ═══ MODAL SYSTEM ═══
+function openModal() {
+  document.getElementById('waitlistModal').classList.add('open');
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('modalSuccess').classList.remove('show');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('wl-name').focus(), 350);
+}
+
+function closeModal() {
+  document.getElementById('waitlistModal').classList.remove('open');
+  document.body.style.overflow = '';
+  // Reset form after fade-out
+  setTimeout(() => {
+    document.getElementById('waitlistForm').reset();
+    document.getElementById('modalForm').style.display = 'block';
+    document.getElementById('modalSuccess').classList.remove('show');
+  }, 300);
+}
+
+async function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const form = document.getElementById('waitlistForm');
+  btn.disabled = true;
+  btn.classList.add('loading');
+  document.querySelector('.submit-text').textContent = 'Submitting...';
+
+  try {
+    const formData = new FormData(form);
+    // Add a subject line for the email notification
+    formData.append('_subject', 'New Sumext Waitlist Signup');
+
+    const res = await fetch('https://formspree.io/f/xkokzyqg', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      // Show success state
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalSuccess').classList.add('show');
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (err) {
+    alert('Something went wrong. Please try again or email us directly.');
+    btn.disabled = false;
+    btn.classList.remove('loading');
+    document.querySelector('.submit-text').textContent = 'Request Access →';
+  }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Wire all CTA buttons to open the modal
+document.addEventListener('DOMContentLoaded', () => {
+  // Find buttons by text content
+  document.querySelectorAll('a, button').forEach(el => {
+    const text = el.textContent.trim().toLowerCase();
+    if (
+      text.includes('book a demo') ||
+      text.includes('start free trial') ||
+      text.includes('start 14-day trial') ||
+      text.includes('get started free') ||
+      text.includes('talk to sales') ||
+      text.includes('connect xero') ||
+      text.includes('connect quickbooks') ||
+      text.includes('connect zoho') ||
+      text.includes('connect tally')
+    ) {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+  });
+
+  // Also wire "Sign In" to open the modal (until app.sumext.com exists)
+  document.querySelectorAll('.btn-sm.ghost').forEach(el => {
+    if (el.textContent.trim().toLowerCase().includes('sign in')) {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+  });
+});
 </script>
 </body>
 </html>
