@@ -1119,7 +1119,7 @@ footer {
     </li>
   </ul>
   <div class="nav-right">
-    <button class="btn-sm ghost">Sign In</button>
+    <a href="https://app.sumext.com/login" class="btn-sm ghost">Sign In</a>
     <button class="btn-sm solid">Book a Demo</button>
   </div>
 </nav>
@@ -1968,15 +1968,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Also wire "Sign In" to open the modal (until app.sumext.com exists)
-  document.querySelectorAll('.btn-sm.ghost').forEach(el => {
-    if (el.textContent.trim().toLowerCase().includes('sign in')) {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-      });
-    }
-  });
 });
 </script>
 </body>
