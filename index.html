@@ -1120,7 +1120,7 @@ footer {
   </ul>
   <div class="nav-right">
     <a href="https://app.sumext.com/login" class="btn-sm ghost">Sign In</a>
-    <button class="btn-sm solid">Book a Demo</button>
+    <a href="https://app.sumext.com/signup" class="btn-sm solid">Start Free Trial</a>
   </div>
 </nav>
 
@@ -1528,64 +1528,353 @@ footer {
 </div>
 
 <!-- ═══ PRICING ═══ -->
+<style>
+/* ── Pricing extras ── */
+.trial-banner {
+  background: linear-gradient(135deg, var(--amber-dim) 0%, #fff8f4 100%);
+  border: 1px solid rgba(194,65,12,0.2);
+  border-radius: 16px; padding: 20px 28px;
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 40px; flex-wrap: wrap;
+}
+.tb-icon { font-size: 28px; flex-shrink: 0; }
+.tb-body { flex: 1; }
+.tb-title { font-family: var(--fd); font-size: 18px; font-weight: 700; margin-bottom: 3px; }
+.tb-desc { font-size: 14px; color: var(--t2); }
+.tb-badge {
+  background: var(--amber); color: white;
+  padding: 6px 16px; border-radius: 100px;
+  font-family: var(--fm); font-size: 11px;
+  font-weight: 600; letter-spacing: 0.06em;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+/* Toggle */
+.billing-toggle {
+  display: flex; align-items: center; gap: 12px;
+  justify-content: center; margin-bottom: 48px;
+}
+.bt-label {
+  font-family: var(--fm); font-size: 12px;
+  color: var(--t2); letter-spacing: 0.05em;
+}
+.bt-label.active { color: var(--ink); font-weight: 600; }
+.bt-switch {
+  width: 48px; height: 26px; border-radius: 100px;
+  background: var(--ink); border: none; cursor: pointer;
+  position: relative; transition: background 0.25s;
+  flex-shrink: 0;
+}
+.bt-thumb {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: white; position: absolute;
+  top: 3px; left: 3px;
+  transition: transform 0.25s var(--ease);
+}
+.bt-switch.annual .bt-thumb { transform: translateX(22px); }
+.bt-save {
+  background: var(--sage-dim);
+  color: var(--sage); border: 1px solid rgba(63,125,92,0.25);
+  padding: 3px 10px; border-radius: 100px;
+  font-family: var(--fm); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* 4-col grid for new pricing */
+.price-grid-new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.price-card-new {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 20px; padding: 28px 24px;
+  position: relative; overflow: hidden;
+  transition: all 0.3s var(--ease);
+  display: flex; flex-direction: column;
+}
+.price-card-new:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(26,31,46,.08); }
+.price-card-new.feat {
+  background: var(--ink); border-color: var(--ink);
+  box-shadow: 0 20px 60px rgba(26,31,46,.28);
+}
+.price-card-new.feat * { color: var(--cream) !important; }
+.price-card-new.feat .pf-dim * { color: rgba(240,244,255,0.3) !important; }
+.price-card-new.feat .price-div-new { background: rgba(245,241,232,.12) !important; }
+.price-card-new.feat::before {
+  content: 'MOST POPULAR';
+  position: absolute; top: 0; right: 0;
+  font-family: var(--fm); font-size: 9px; font-weight: 600;
+  letter-spacing: 0.1em;
+  background: var(--amber); color: white !important;
+  padding: 5px 14px; border-radius: 0 20px 0 10px;
+}
+.pcn-plan {
+  font-family: var(--fm); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--t2); margin-bottom: 16px;
+}
+.pcn-price-row { display: flex; align-items: flex-start; gap: 2px; margin-bottom: 2px; }
+.pcn-dol { font-family: var(--fd); font-size: 18px; font-weight: 500; color: var(--t2); margin-top: 8px; }
+.pcn-num { font-family: var(--fd); font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--ink); }
+.pcn-per { font-size: 12px; color: var(--t3); margin-bottom: 4px; }
+.pcn-annual { font-family: var(--fm); font-size: 11px; color: var(--sage); margin-bottom: 6px; display: none; }
+.pcn-annual.show { display: block; }
+.pcn-vol { font-family: var(--fm); font-size: 11px; color: var(--amber); margin-bottom: 20px; }
+.price-div-new { height: 1px; background: var(--line); margin-bottom: 20px; }
+.pf-list-new { display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; flex: 1; }
+.pf-item-new { display: flex; gap: 9px; font-size: 13px; color: var(--t2); align-items: flex-start; line-height: 1.45; }
+.pf-ok-new { color: var(--sage); font-weight: 700; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+.price-card-new.feat .pf-ok-new { color: var(--amber) !important; }
+.pf-dim .pf-ok-new { color: var(--t4) !important; }
+.price-btn-new {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 12px; border-radius: 100px;
+  font-family: var(--fb); font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all 0.25s var(--ease);
+  text-decoration: none; border: none; margin-top: auto;
+}
+.price-btn-new.outline {
+  background: transparent; border: 1px solid var(--line2); color: var(--ink);
+}
+.price-btn-new.outline:hover { border-color: var(--ink); background: var(--surface2); }
+.price-btn-new.filled { background: var(--amber); color: white !important; }
+.price-btn-new.filled:hover { background: var(--amber2); transform: scale(0.98); }
+.price-btn-new.dark { background: var(--amber); color: white !important; }
+.price-btn-new.dark:hover { background: var(--amber2); }
+
+/* FAQ */
+.faq-section { padding: 80px 0; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 48px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 14px; padding: 22px 24px;
+  cursor: pointer; transition: all 0.2s var(--ease);
+}
+.faq-item:hover { border-color: var(--line2); }
+.faq-item.open { border-color: rgba(194,65,12,0.25); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+}
+.faq-icon { font-size: 18px; flex-shrink: 0; color: var(--amber); transition: transform 0.25s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  font-size: 14px; color: var(--t2); line-height: 1.7;
+  margin-top: 12px; display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+@media (max-width: 960px) {
+  .price-grid-new { grid-template-columns: 1fr 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .price-grid-new { grid-template-columns: 1fr; }
+  .trial-banner { flex-direction: column; }
+}
+</style>
+
 <div id="pricing" class="wrap">
   <section class="pricing-section">
     <div class="pricing-head reveal">
       <div class="section-tag"><span class="section-tag-dot"></span><span class="section-tag-text">Pricing</span></div>
-      <h2>Simple. Transparent.<br>No <em>surprises.</em></h2>
-      <p class="section-sub">All plans include fraud detection, 200+ languages, and unlimited users. No per-seat fees ever.</p>
+      <h2>Start free.<br>Scale when <em>ready.</em></h2>
+      <p class="section-sub">14-day free trial on every plan. No credit card required. Cancel anytime. All plans powered by Claude AI.</p>
     </div>
-    <div class="price-grid reveal">
-      <div class="price-card">
-        <div class="price-plan">Starter</div>
-        <div class="price-line"><span class="price-dol">$</span><span class="price-num">0</span></div>
-        <div class="price-per">forever free</div>
-        <div class="price-vol">100 documents / month</div>
-        <div class="price-div"></div>
-        <div class="pf-list">
-          <div class="pf-item"><span class="pf-ok">✓</span>All 47 document types</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Line item extraction</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>200+ languages</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Fraud detection</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>REST API + Webhooks</div>
-          <div class="pf-item pf-dim"><span class="pf-ok">—</span>Accounting software sync</div>
-          <div class="pf-item pf-dim"><span class="pf-ok">—</span>Self-learning AI</div>
-        </div>
-        <a href="#" class="price-btn outline">Get Started Free</a>
+
+    <!-- Trial banner -->
+    <div class="trial-banner reveal">
+      <span class="tb-icon">🎁</span>
+      <div class="tb-body">
+        <div class="tb-title">14-Day Free Trial on Every Plan</div>
+        <div class="tb-desc">Full access to everything — no credit card, no commitment. See exactly how Sumext transforms your bookkeeping before paying a cent.</div>
       </div>
-      <div class="price-card feat">
-        <div class="price-plan">Professional</div>
-        <div class="price-line"><span class="price-dol">$</span><span class="price-num">49</span></div>
-        <div class="price-per">per month</div>
-        <div class="price-vol">5,000 documents / month</div>
-        <div class="price-div"></div>
-        <div class="pf-list">
-          <div class="pf-item"><span class="pf-ok">✓</span>Everything in Starter</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Xero + QuickBooks sync</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Zoho Books + Tally sync</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Self-learning AI</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Auto-split bulk PDFs</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Bank statement extraction</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Priority support</div>
+      <span class="tb-badge">NO CREDIT CARD</span>
+    </div>
+
+    <!-- Monthly / Annual toggle -->
+    <div class="billing-toggle reveal">
+      <span class="bt-label active" id="monthlyLabel">Monthly</span>
+      <button class="bt-switch" id="billingToggle" onclick="toggleBilling()">
+        <div class="bt-thumb"></div>
+      </button>
+      <span class="bt-label" id="annualLabel">Annual</span>
+      <span class="bt-save">Save 20%</span>
+    </div>
+
+    <!-- 4 pricing cards -->
+    <div class="price-grid-new reveal">
+
+      <!-- Free Trial -->
+      <div class="price-card-new">
+        <div class="pcn-plan">Free Trial</div>
+        <div class="pcn-price-row"><span class="pcn-dol"></span><span class="pcn-num" style="font-size:42px">14 days</span></div>
+        <div class="pcn-per">then choose a plan</div>
+        <div class="pcn-vol">No credit card required</div>
+        <div class="price-div-new"></div>
+        <div class="pf-list-new">
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Up to 50 test documents</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>All accounting integrations</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>200+ languages</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>AI ledger suggestion</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>1 team member only</div>
+          <div class="pf-item-new pf-dim"><span class="pf-ok-new">—</span>Contractor portal</div>
+          <div class="pf-item-new pf-dim"><span class="pf-ok-new">—</span>WhatsApp notifications</div>
         </div>
-        <a href="#" class="price-btn solid">Start 14-Day Trial</a>
+        <a href="https://app.sumext.com/signup" class="price-btn-new outline">Start Free Trial</a>
       </div>
-      <div class="price-card">
-        <div class="price-plan">Enterprise</div>
-        <div class="price-line"><span class="price-num" style="font-size:46px">Custom</span></div>
-        <div class="price-per">volume pricing</div>
-        <div class="price-vol">Unlimited documents</div>
-        <div class="price-div"></div>
-        <div class="pf-list">
-          <div class="pf-item"><span class="pf-ok">✓</span>Everything in Professional</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>On-premise deployment</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Dedicated account manager</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>99.99% uptime SLA</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>Custom model fine-tuning</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>White-label option</div>
-          <div class="pf-item"><span class="pf-ok">✓</span>ISO 27001 + SOC 2</div>
+
+      <!-- Solo -->
+      <div class="price-card-new">
+        <div class="pcn-plan">Solo</div>
+        <div class="pcn-price-row">
+          <span class="pcn-dol">$</span>
+          <span class="pcn-num" id="soloPrice">19</span>
         </div>
-        <a href="#" class="price-btn outline">Talk to Sales</a>
+        <div class="pcn-per">per month</div>
+        <div class="pcn-annual" id="soloAnnual">Billed $182/year — save $46</div>
+        <div class="pcn-vol">300 documents / month</div>
+        <div class="price-div-new"></div>
+        <div class="pf-list-new">
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>300 documents/month</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>2 team members</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Xero + QuickBooks sync</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>AI self-learning rules</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Fraud detection</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>WhatsApp notifications</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Add contractors at $5/seat</div>
+          <div class="pf-item-new pf-dim"><span class="pf-ok-new">—</span>Zoho / Tally sync</div>
+        </div>
+        <a href="https://app.sumext.com/signup?plan=solo" class="price-btn-new outline">Try Free for 14 Days</a>
+      </div>
+
+      <!-- Team (featured) -->
+      <div class="price-card-new feat">
+        <div class="pcn-plan">Team</div>
+        <div class="pcn-price-row">
+          <span class="pcn-dol">$</span>
+          <span class="pcn-num" id="teamPrice">49</span>
+        </div>
+        <div class="pcn-per">per month</div>
+        <div class="pcn-annual" id="teamAnnual">Billed $470/year — save $118</div>
+        <div class="pcn-vol">2,000 documents / month</div>
+        <div class="price-div-new"></div>
+        <div class="pf-list-new">
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>2,000 documents/month</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>5 team members</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>All integrations (Xero, QB, Zoho, Tally)</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>5 contractor seats included</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>WhatsApp notifications (team + contractors)</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Email ingestion inbox</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Chat with documents</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Priority support</div>
+        </div>
+        <a href="https://app.sumext.com/signup?plan=team" class="price-btn-new dark">Try Free for 14 Days →</a>
+      </div>
+
+      <!-- Firm -->
+      <div class="price-card-new">
+        <div class="pcn-plan">Firm</div>
+        <div class="pcn-price-row">
+          <span class="pcn-dol">$</span>
+          <span class="pcn-num" id="firmPrice">99</span>
+        </div>
+        <div class="pcn-per">per month</div>
+        <div class="pcn-annual" id="firmAnnual">Billed $950/year — save $238</div>
+        <div class="pcn-vol">Unlimited documents</div>
+        <div class="price-div-new"></div>
+        <div class="pf-list-new">
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Unlimited documents</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Unlimited team members</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Unlimited contractors</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>All integrations + MYOB</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>WhatsApp notifications (everyone)</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Client portal</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>White-label option</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Dedicated account manager</div>
+        </div>
+        <a href="https://app.sumext.com/signup?plan=firm" class="price-btn-new outline">Try Free for 14 Days</a>
+      </div>
+
+    </div>
+
+    <!-- Feature comparison table -->
+    <div style="margin-top: 48px; overflow-x: auto;" class="reveal">
+      <table style="width:100%; border-collapse:collapse; font-size:13px;">
+        <thead>
+          <tr>
+            <th style="text-align:left; padding:14px 16px; border-bottom:2px solid var(--ink); font-family:var(--fd); font-size:15px; font-weight:700;">Feature</th>
+            <th style="padding:14px 12px; border-bottom:2px solid var(--ink); font-family:var(--fm); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--t2);">Solo</th>
+            <th style="padding:14px 12px; border-bottom:2px solid var(--ink); font-family:var(--fm); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--amber);">Team</th>
+            <th style="padding:14px 12px; border-bottom:2px solid var(--ink); font-family:var(--fm); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--t2);">Firm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Documents / month</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; font-family:var(--fm); font-size:12px;">300</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; font-family:var(--fm); font-size:12px; color:var(--amber); font-weight:700;">2,000</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; font-family:var(--fm); font-size:12px;">Unlimited</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Team members</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t2);">2</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center;">5</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center;">Unlimited</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Xero + QuickBooks</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Zoho Books + Tally</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Contractor portal</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t2); font-size:12px;">Add-on $5/seat</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t2); font-size:12px;">5 included</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center;">Unlimited</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">WhatsApp notifications</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Email ingestion inbox</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Chat with documents</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Client portal</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">White-label</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; font-weight:600;">Support</td><td style="padding:12px; text-align:center; color:var(--t2); font-size:12px;">Email</td><td style="padding:12px; text-align:center; color:var(--t2); font-size:12px;">Priority</td><td style="padding:12px; text-align:center; color:var(--t2); font-size:12px;">Dedicated</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Legal footnote -->
+    <div style="text-align:center; margin-top:28px; padding:16px; font-size:12px; color:var(--t3); font-family:var(--fm); line-height:1.7; border-top:1px dashed var(--line);">
+      By starting a free trial you agree to our
+      <a href="https://app.sumext.com/terms" target="_blank" style="color:var(--amber);text-decoration:none;">Terms of Service</a>
+      and
+      <a href="https://app.sumext.com/privacy" target="_blank" style="color:var(--amber);text-decoration:none;">Privacy Policy</a>.
+      All plans include a 14-day free trial. No credit card required.
+      See our <a href="https://app.sumext.com/refund-policy" target="_blank" style="color:var(--amber);text-decoration:none;">Refund Policy</a> for details.
+      Payments processed securely by Paddle.
+    </div>
+  </section>
+</div>
+<div class="wrap">
+  <section class="faq-section">
+    <div style="text-align:center" class="reveal">
+      <div class="section-tag" style="display:inline-flex"><span class="section-tag-dot"></span><span class="section-tag-text">FAQ</span></div>
+      <h2>Common <em>questions</em></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">What happens after my 14-day trial? <span class="faq-icon">+</span></div>
+        <div class="faq-a">After 14 days you'll be prompted to choose a paid plan. If you don't upgrade, your account switches to read-only — you can still view past documents but cannot process new ones. No charges until you choose a plan.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I switch plans anytime? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. Upgrade or downgrade at any time. When you upgrade, you're charged the prorated difference immediately. When you downgrade, the change takes effect at your next billing cycle.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">What counts as a document? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Each file upload counts as one document regardless of page count. A 10-page invoice is still 1 document. Multi-page bank statements count as 1 document. Only successful extractions count towards your monthly limit.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">How do contractor seats work on Team? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Team plan includes 5 contractor seats. Each seat lets one subcontractor, field worker, or freelancer submit invoices and timesheets directly through the Sumext portal. You can add more contractor seats for $5/seat/month beyond the included 5.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">Which accounting software is supported? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Solo supports Xero and QuickBooks. Team and Firm additionally support Zoho Books and Tally. Firm also supports MYOB. All plans support CSV export for any accounting software not listed. More integrations coming in 2026.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">Is my data secure? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. All data is encrypted in transit (TLS) and at rest (AES-256). We never use your financial documents to train AI models. You can export or delete all your data at any time. We are working towards ISO 27001 certification.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">What if I process more than my plan limit? <span class="faq-icon">+</span></div>
+        <div class="faq-a">You'll get an email warning at 80% usage. At 100% you can either upgrade your plan or purchase a top-up pack (100 extra documents for $4). Your existing documents are never deleted.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you offer annual billing? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — toggle to annual billing above and save 20% across all plans. Annual billing is charged once per year. Solo annual: $182. Team annual: $470. Firm annual: $950. You can switch back to monthly at renewal.</div>
       </div>
     </div>
   </section>
@@ -1599,8 +1888,8 @@ footer {
       <h2>See Sumext process<br>your <em>actual documents.</em></h2>
       <p>Upload a few real invoices in any language, any format. Watch them land in your accounting software, categorized and ready to review — in under a minute.</p>
       <div class="cta-btns">
-        <a href="#" class="btn-lg primary">Book a Demo <span class="btn-arrow">↗</span></a>
-        <a href="#" class="btn-lg ghost">Start Free Trial</a>
+        <a href="https://app.sumext.com/signup" class="btn-lg primary">Start Free Trial <span class="btn-arrow">→</span></a>
+        <a href="#" class="btn-lg ghost">Book a Demo</a>
       </div>
     </div>
   </section>
@@ -1645,13 +1934,21 @@ footer {
           <a href="#pricing">Pricing</a>
         </div>
       </div>
+      <div>
+        <div class="fc-title">Legal</div>
+        <div class="fc-items">
+          <a href="https://app.sumext.com/terms" target="_blank">Terms of Service</a>
+          <a href="https://app.sumext.com/privacy" target="_blank">Privacy Policy</a>
+          <a href="https://app.sumext.com/refund-policy" target="_blank">Refund Policy</a>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Sumext. Made with care for bookkeepers.</span>
       <div class="fb-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Security</a>
+        <a href="https://app.sumext.com/privacy" target="_blank">Privacy Policy</a>
+        <a href="https://app.sumext.com/terms" target="_blank">Terms of Service</a>
+        <a href="https://app.sumext.com/refund-policy" target="_blank">Refund Policy</a>
       </div>
     </div>
   </div>
@@ -1710,6 +2007,12 @@ footer {
           <span class="submit-text">Request Access →</span>
         </button>
         <div class="modal-note">No spam. We'll only email you about Sumext.</div>
+        <div class="modal-note" style="margin-top:8px;">
+          By submitting you agree to our
+          <a href="https://app.sumext.com/terms" target="_blank" style="color:var(--amber);text-decoration:none;">Terms</a>
+          and
+          <a href="https://app.sumext.com/privacy" target="_blank" style="color:var(--amber);text-decoration:none;">Privacy Policy</a>.
+        </div>
       </form>
     </div>
 
@@ -1945,17 +2248,17 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Wire all CTA buttons to open the modal
+// Wire only "Book a Demo" style CTAs to open the modal
+// Pricing buttons and Sign In now route directly to app.sumext.com
 document.addEventListener('DOMContentLoaded', () => {
-  // Find buttons by text content
   document.querySelectorAll('a, button').forEach(el => {
     const text = el.textContent.trim().toLowerCase();
+    const href = el.getAttribute('href') || '';
+    // Skip anything that already goes to app.sumext.com
+    if (href.includes('app.sumext.com')) return;
+    // Only intercept connect buttons and book a demo
     if (
       text.includes('book a demo') ||
-      text.includes('start free trial') ||
-      text.includes('start 14-day trial') ||
-      text.includes('get started free') ||
-      text.includes('talk to sales') ||
       text.includes('connect xero') ||
       text.includes('connect quickbooks') ||
       text.includes('connect zoho') ||
@@ -1967,8 +2270,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
 });
+
+// ── Billing toggle
+let isAnnual = false;
+function toggleBilling() {
+  isAnnual = !isAnnual;
+  const btn = document.getElementById('billingToggle');
+  const mLabel = document.getElementById('monthlyLabel');
+  const aLabel = document.getElementById('annualLabel');
+  btn.classList.toggle('annual', isAnnual);
+  mLabel.classList.toggle('active', !isAnnual);
+  aLabel.classList.toggle('active', isAnnual);
+  const prices = {
+    solo: { monthly: 19, annual: 15 },
+    team: { monthly: 49, annual: 39 },
+    firm: { monthly: 99, annual: 79 }
+  };
+  if (isAnnual) {
+    document.getElementById('soloPrice').textContent = prices.solo.annual;
+    document.getElementById('teamPrice').textContent = prices.team.annual;
+    document.getElementById('firmPrice').textContent = prices.firm.annual;
+    document.getElementById('soloAnnual').classList.add('show');
+    document.getElementById('teamAnnual').classList.add('show');
+    document.getElementById('firmAnnual').classList.add('show');
+  } else {
+    document.getElementById('soloPrice').textContent = prices.solo.monthly;
+    document.getElementById('teamPrice').textContent = prices.team.monthly;
+    document.getElementById('firmPrice').textContent = prices.firm.monthly;
+    document.getElementById('soloAnnual').classList.remove('show');
+    document.getElementById('teamAnnual').classList.remove('show');
+    document.getElementById('firmAnnual').classList.remove('show');
+  }
+}
+
+// ── FAQ toggle
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
 </script>
 </body>
 </html>
