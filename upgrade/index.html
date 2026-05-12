@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upgrade Sumext</title>
+  <meta name="description" content="Choose a Sumext plan and upgrade your bookkeeping automation workspace." />
+  <link rel="canonical" href="https://sumext.com/upgrade" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <style>
+    :root { --cream:#f5f1e8; --ink:#1a1f2e; --muted:#5b6478; --line:#d9d3c2; --amber:#c2410c; --sage:#3f7d5c; --white:#fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: Inter, sans-serif; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 22px clamp(20px, 5vw, 72px); border-bottom: 1px solid var(--line); background: rgba(245,241,232,.92); position: sticky; top: 0; z-index: 2; }
+    .logo { font-family: Fraunces, serif; font-weight: 800; font-size: 26px; color: var(--ink); text-decoration: none; font-style: italic; }
+    .logo span { color: var(--amber); }
+    .signin { color: var(--ink); text-decoration: none; font-weight: 600; }
+    main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 58px 0 72px; }
+    .hero { max-width: 760px; }
+    h1 { margin: 0; font-family: Fraunces, serif; font-size: clamp(42px, 7vw, 76px); line-height: .95; letter-spacing: 0; }
+    .lead { margin: 18px 0 0; max-width: 650px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .notice { display: none; margin-top: 22px; border: 1px solid #f2c48f; background: #fff7ed; color: #7c2d12; padding: 14px 16px; border-radius: 8px; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 42px; }
+    .plan { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; min-height: 430px; }
+    .plan.featured { border-color: #d97706; box-shadow: 0 12px 36px rgba(194,65,12,.13); }
+    .eyebrow { color: var(--sage); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    h2 { margin: 8px 0 0; font-family: Fraunces, serif; font-size: 30px; }
+    .price { margin: 10px 0 0; font-size: 32px; font-weight: 800; }
+    .price span { font-size: 14px; color: var(--muted); font-weight: 500; }
+    ul { margin: 20px 0 24px; padding: 0; list-style: none; display: grid; gap: 10px; color: var(--muted); line-height: 1.45; }
+    li::before { content: "✓"; color: var(--sage); font-weight: 800; margin-right: 8px; }
+    .button { margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border-radius: 8px; background: var(--amber); color: white; text-decoration: none; font-weight: 700; padding: 12px 16px; }
+    .button.secondary { background: var(--ink); }
+    .fine { margin-top: 28px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } header { position: static; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="/">sum<span>ext</span></a>
+    <a class="signin" href="https://app.sumext.com/login">Sign in</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Upgrade</p>
+      <h1>Choose the plan that fits your firm.</h1>
+      <p class="lead">If you arrived from the Sumext app, checkout should open automatically. Otherwise, choose a plan and create your workspace.</p>
+      <div id="checkoutNotice" class="notice">Opening secure checkout...</div>
+    </section>
+
+    <section class="grid" aria-label="Pricing plans">
+      <article class="plan">
+        <p class="eyebrow">Solo</p>
+        <h2>Solo</h2>
+        <p class="price">$19 <span>/ month</span></p>
+        <ul>
+          <li>300 documents per month</li>
+          <li>2 team members</li>
+          <li>Contractor portal with seat add-ons</li>
+          <li>WhatsApp notifications</li>
+        </ul>
+        <a class="button" href="https://app.sumext.com/signup?plan=solo">Start Solo</a>
+      </article>
+
+      <article class="plan featured">
+        <p class="eyebrow">Most popular</p>
+        <h2>Team</h2>
+        <p class="price">$49 <span>/ month</span></p>
+        <ul>
+          <li>2,000 documents per month</li>
+          <li>5 team members</li>
+          <li>5 contractors included</li>
+          <li>Email ingestion and priority support</li>
+        </ul>
+        <a class="button secondary" href="https://app.sumext.com/signup?plan=team">Start Team</a>
+      </article>
+
+      <article class="plan">
+        <p class="eyebrow">Scale</p>
+        <h2>Firm</h2>
+        <p class="price">$99 <span>/ month</span></p>
+        <ul>
+          <li>Unlimited documents</li>
+          <li>Unlimited team members</li>
+          <li>Unlimited contractors</li>
+          <li>Client portal and white label tools</li>
+        </ul>
+        <a class="button" href="https://app.sumext.com/signup?plan=firm">Start Firm</a>
+      </article>
+    </section>
+
+    <p class="fine">Secure checkout is provided by Paddle. Subscriptions are managed inside your Sumext workspace after payment.</p>
+  </main>
+
+  <script>
+    (function () {
+      var token = "live_1ef5e309880ae7322ac362b7ca0";
+      var params = new URLSearchParams(window.location.search);
+      var transactionId = params.get("_ptxn") || params.get("ptxn") || params.get("transaction_id");
+
+      if (!window.Paddle || !token) return;
+
+      Paddle.Initialize({
+        token: token,
+        checkout: {
+          settings: {
+            displayMode: "overlay",
+            theme: "light",
+            allowLogout: false,
+            successUrl: "https://app.sumext.com/dashboard/settings?tab=billing&checkout=success"
+          }
+        }
+      });
+
+      if (transactionId) {
+        var notice = document.getElementById("checkoutNotice");
+        if (notice) notice.style.display = "block";
+        Paddle.Checkout.open({ transactionId: transactionId });
+      }
+    })();
+  </script>
+</body>
+</html>
