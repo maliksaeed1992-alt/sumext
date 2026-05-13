@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -131,7 +131,7 @@ body::before {
 ::-webkit-scrollbar-track { background: var(--cream); }
 ::-webkit-scrollbar-thumb { background: var(--line2); border-radius: 3px; }
 
-/* â•â•â• NAV with dropdowns â•â•â• */
+/* ═══ NAV with dropdowns ═══ */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(245,241,232,0.92);
@@ -207,7 +207,7 @@ nav {
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
 
-/* â•â•â• HERO â•â•â• */
+/* ═══ HERO ═══ */
 .hero { padding: 140px 0 80px; position: relative; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -263,7 +263,7 @@ nav {
 .btn-lg.ghost:hover { border-color: var(--ink); background: var(--surface2); }
 .hero-note { font-size: 13px; color: var(--t3); font-family: var(--fm); margin-top: 8px; }
 
-/* â•â•â• MARQUEE â•â•â• */
+/* ═══ MARQUEE ═══ */
 .marquee-wrap {
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
   padding: 24px 0; margin-top: 60px; overflow: hidden;
@@ -284,7 +284,7 @@ nav {
 .marquee-co:hover { color: var(--ink2); }
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* â•â•â• SECTION â•â•â• */
+/* ═══ SECTION ═══ */
 .section { padding: 120px 0; }
 .section-tag {
   display: inline-flex; align-items: center; gap: 8px;
@@ -309,7 +309,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
   max-width: 560px; font-weight: 400;
 }
 
-/* â•â•â• LIVE DEMO â•â•â• */
+/* ═══ LIVE DEMO ═══ */
 .demo-header { text-align: center; margin-bottom: 60px; }
 .demo-header .section-tag { margin-left: auto; margin-right: auto; }
 .demo-header .section-sub { margin: 0 auto; }
@@ -480,7 +480,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
 .fraud-chip.clean { background: var(--sage-dim); color: var(--sage); border: 1px solid rgba(63,125,92,0.25); }
 .fraud-chip.bad { background: var(--coral-dim); color: var(--coral); border: 1px solid rgba(190,58,71,0.25); }
 
-/* â•â•â• INTEGRATIONS SECTION (NEW) â•â•â• */
+/* ═══ INTEGRATIONS SECTION (NEW) ═══ */
 .integrations-section {
   padding: 120px 0;
   background: var(--surface2);
@@ -552,9 +552,9 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
   text-decoration: none; transition: gap 0.2s var(--ease);
 }
 .int-cta:hover { gap: 10px; }
-.int-cta::after { content: 'â†’'; }
+.int-cta::after { content: '→'; }
 
-/* â•â•â• PROBLEMS â•â•â• */
+/* ═══ PROBLEMS ═══ */
 .problems-section {
   padding: 120px 0;
   background: var(--surface2);
@@ -594,7 +594,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
   color: var(--amber); line-height: 1;
 }
 
-/* â•â•â• STATS â•â•â• */
+/* ═══ STATS ═══ */
 .stats-section { padding: 100px 0; }
 .stats-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
@@ -616,7 +616,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
 .stat-big em { font-style: italic; font-weight: 400; color: var(--amber); font-size: 52px; vertical-align: super; }
 .stat-label { font-size: 15px; color: var(--t2); font-weight: 400; }
 
-/* â•â•â• CASE STUDIES (NEW) â•â•â• */
+/* ═══ CASE STUDIES (NEW) ═══ */
 .case-section { padding: 120px 0; }
 .case-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
@@ -674,7 +674,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
 .case-person { font-size: 13px; font-weight: 600; }
 .case-role { font-size: 11px; color: var(--t3); }
 
-/* â•â•â• ABOUT (NEW) â•â•â• */
+/* ═══ ABOUT (NEW) ═══ */
 .about-section {
   padding: 120px 0;
   background: var(--surface2);
@@ -708,7 +708,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
 .av-title { font-family: var(--fd); font-size: 17px; font-weight: 600; margin-bottom: 4px; }
 .av-desc { font-size: 13.5px; color: var(--t2); line-height: 1.6; }
 
-/* â•â•â• COMPARE CARDS (NEW â€” Sumext vs X) â•â•â• */
+/* ═══ COMPARE CARDS (NEW — Sumext vs X) ═══ */
 .vs-section { padding: 120px 0; }
 .vs-header { text-align: center; margin-bottom: 64px; }
 .vs-header .section-tag { margin-left: auto; margin-right: auto; }
@@ -760,9 +760,9 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
   margin-top: 8px;
 }
 .vs-link:hover { gap: 10px; color: var(--amber); }
-.vs-link::after { content: 'â†’'; }
+.vs-link::after { content: '→'; }
 
-/* â•â•â• SUPPORT (NEW) â•â•â• */
+/* ═══ SUPPORT (NEW) ═══ */
 .support-section { padding: 120px 0; }
 .support-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px;
@@ -787,9 +787,9 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
   text-decoration: none; transition: gap 0.2s var(--ease);
 }
 .support-action:hover { gap: 10px; color: var(--amber); }
-.support-action::after { content: 'â†’'; }
+.support-action::after { content: '→'; }
 
-/* â•â•â• PRICING â•â•â• */
+/* ═══ PRICING ═══ */
 .pricing-section { padding: 120px 0; background: var(--surface2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pricing-head { text-align: center; margin-bottom: 64px; }
 .pricing-head .section-tag { margin-left: auto; margin-right: auto; }
@@ -857,7 +857,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
 .price-btn.solid { background: var(--amber); border: none; color: white !important; }
 .price-btn.solid:hover { background: var(--amber2); transform: scale(0.98); }
 
-/* â•â•â• CTA â•â•â• */
+/* ═══ CTA ═══ */
 .cta-section { padding: 120px 0; }
 .cta-box {
   background: var(--ink); color: var(--cream);
@@ -898,7 +898,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--amber); }
 }
 .cta-box .btn-lg.ghost:hover { background: rgba(245,241,232,0.15); }
 
-/* â•â•â• FOOTER â•â•â• */
+/* ═══ FOOTER ═══ */
 footer {
   padding: 72px 40px 40px;
   border-top: 1px solid var(--line);
@@ -945,7 +945,7 @@ footer {
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
 
-/* â•â•â• WAITLIST MODAL â•â•â• */
+/* ═══ WAITLIST MODAL ═══ */
 .modal-backdrop {
   position: fixed; inset: 0;
   background: rgba(26, 31, 46, 0.6);
@@ -1141,12 +1141,12 @@ footer {
 </head>
 <body>
 
-<!-- â•â•â• NAV â•â•â• -->
+<!-- ═══ NAV ═══ -->
 <nav>
   <a class="nav-logo" href="#">sum<span>ext</span></a>
   <ul class="nav-links">
     <li class="nav-item">
-      <button class="nav-link">Integrations <span class="caret">â–¼</span></button>
+      <button class="nav-link">Integrations <span class="caret">▼</span></button>
       <div class="dropdown">
         <a href="#integrations" class="dd-item">
           <div class="dd-title">Xero</div>
@@ -1167,7 +1167,7 @@ footer {
       </div>
     </li>
     <li class="nav-item">
-      <button class="nav-link">Why Sumext <span class="caret">â–¼</span></button>
+      <button class="nav-link">Why Sumext <span class="caret">▼</span></button>
       <div class="dropdown">
         <a href="#case-studies" class="dd-item">
           <div class="dd-title">Case Studies</div>
@@ -1192,7 +1192,7 @@ footer {
       </div>
     </li>
     <li class="nav-item">
-      <button class="nav-link">Support <span class="caret">â–¼</span></button>
+      <button class="nav-link">Support <span class="caret">▼</span></button>
       <div class="dropdown">
         <a href="#support" class="dd-item">
           <div class="dd-title">Help Center</div>
@@ -1222,7 +1222,7 @@ footer {
   </div>
 </nav>
 
-<!-- â•â•â• HERO â•â•â• -->
+<!-- ═══ HERO ═══ -->
 <div class="wrap">
   <section class="hero">
     <div class="hero-badge">
@@ -1230,16 +1230,16 @@ footer {
       <span class="hero-badge-text">AI Bookkeeping for Modern Firms</span>
     </div>
     <h1>Stop typing invoices.<br>Start <em>advising clients.</em></h1>
-    <p class="hero-sub">Sumext reads any document â€” invoice, receipt, bank statement, handwritten or printed, in 200+ languages. It codes, categorizes, and pushes directly to Xero, QuickBooks, Zoho, and Tally. Built for firms that have outgrown manual entry.</p>
+    <p class="hero-sub">Sumext reads any document — invoice, receipt, bank statement, handwritten or printed, in 200+ languages. It codes, categorizes, and pushes directly to Xero, QuickBooks, Zoho, and Tally. Built for firms that have outgrown manual entry.</p>
     <div class="hero-ctas">
-      <a href="#demo" class="btn-lg primary">Try Live Demo <span class="btn-arrow">â†“</span></a>
+      <a href="#demo" class="btn-lg primary">Try Live Demo <span class="btn-arrow">↓</span></a>
       <a href="#pricing" class="btn-lg ghost">See Pricing</a>
     </div>
-    <p class="hero-note">14-day trial Â· No credit card Â· 15-minute setup</p>
+    <p class="hero-note">14-day trial · No credit card · 15-minute setup</p>
   </section>
 </div>
 
-<!-- â•â•â• MARQUEE â•â•â• -->
+<!-- ═══ MARQUEE ═══ -->
 <div class="marquee-wrap">
   <div class="marquee-label">Trusted by 2,500+ firms across 50+ countries</div>
   <div class="marquee">
@@ -1270,7 +1270,7 @@ footer {
   </div>
 </div>
 
-<!-- â•â•â• LIVE DEMO â•â•â• -->
+<!-- ═══ LIVE DEMO ═══ -->
 <div id="demo" class="wrap">
   <section class="section">
     <div class="demo-header reveal">
@@ -1282,7 +1282,7 @@ footer {
     <div class="demo-shell reveal">
       <div class="demo-top">
         <div class="dt-dots"><span></span><span></span><span></span></div>
-        <span class="dt-title">sumext â€” extraction engine</span>
+        <span class="dt-title">sumext — extraction engine</span>
         <div class="dt-live"><span class="dt-live-dot"></span>AI Ready</div>
       </div>
 
@@ -1311,7 +1311,7 @@ footer {
           </div>
 
           <div id="outputEmpty" class="output-empty">
-            <div class="output-empty-icon">ðŸ“‹</div>
+            <div class="output-empty-icon">📋</div>
             <div class="output-empty-text">Click extract to see<br>structured output</div>
           </div>
 
@@ -1322,19 +1322,19 @@ footer {
   </section>
 </div>
 
-<!-- â•â•â• INTEGRATIONS SECTION â•â•â• -->
+<!-- ═══ INTEGRATIONS SECTION ═══ -->
 <div id="integrations" class="integrations-section">
   <div class="wrap">
     <div class="int-header reveal">
       <div class="section-tag"><span class="section-tag-dot"></span><span class="section-tag-text">Integrations</span></div>
       <h2>Syncs with <em>every</em><br>accounting software.</h2>
-      <p class="section-sub">One-click connection to the accounting platforms your firm already uses. Data flows automatically â€” no copy-paste, no CSV downloads, no manual entry.</p>
+      <p class="section-sub">One-click connection to the accounting platforms your firm already uses. Data flows automatically — no copy-paste, no CSV downloads, no manual entry.</p>
     </div>
     <div class="int-grid">
       <div class="int-card xero reveal">
         <div class="int-logo">X</div>
         <div class="int-name">Xero</div>
-        <div class="int-region">UK Â· Australia Â· NZ Â· Global</div>
+        <div class="int-region">UK · Australia · NZ · Global</div>
         <div class="int-desc">Auto-create bills, bank transactions, and invoices in Xero. Full chart of accounts mapping. Line item detail preserved.</div>
         <div class="int-status live"><span class="int-status-dot"></span>Live</div>
         <div style="margin-top: 16px"><a href="#" class="int-cta">Connect Xero</a></div>
@@ -1342,7 +1342,7 @@ footer {
       <div class="int-card qb reveal">
         <div class="int-logo">QB</div>
         <div class="int-name">QuickBooks</div>
-        <div class="int-region">USA Â· Canada Â· Global</div>
+        <div class="int-region">USA · Canada · Global</div>
         <div class="int-desc">Push extracted invoices and expenses directly to QuickBooks Online. Supports classes, projects, and custom fields.</div>
         <div class="int-status live"><span class="int-status-dot"></span>Live</div>
         <div style="margin-top: 16px"><a href="#" class="int-cta">Connect QuickBooks</a></div>
@@ -1350,27 +1350,27 @@ footer {
       <div class="int-card zoho reveal">
         <div class="int-logo">Z</div>
         <div class="int-name">Zoho Books</div>
-        <div class="int-region">India Â· Middle East Â· SEA</div>
-        <div class="int-desc">Native sync with Zoho Books â€” auto-create bills and credit notes. GST-compliant for Indian firms. Multi-currency support.</div>
+        <div class="int-region">India · Middle East · SEA</div>
+        <div class="int-desc">Native sync with Zoho Books — auto-create bills and credit notes. GST-compliant for Indian firms. Multi-currency support.</div>
         <div class="int-status live"><span class="int-status-dot"></span>Live</div>
         <div style="margin-top: 16px"><a href="#" class="int-cta">Connect Zoho</a></div>
       </div>
       <div class="int-card tally reveal">
         <div class="int-logo">T</div>
         <div class="int-name">Tally</div>
-        <div class="int-region">Pakistan Â· India Â· Bangladesh</div>
-        <div class="int-desc">First AI bookkeeping tool to natively sync with Tally Prime. Vouchers, ledgers, GST entries â€” all automated.</div>
+        <div class="int-region">Pakistan · India · Bangladesh</div>
+        <div class="int-desc">First AI bookkeeping tool to natively sync with Tally Prime. Vouchers, ledgers, GST entries — all automated.</div>
         <div class="int-status live"><span class="int-status-dot"></span>Live</div>
         <div style="margin-top: 16px"><a href="#" class="int-cta">Connect Tally</a></div>
       </div>
     </div>
     <div style="text-align: center; margin-top: 40px; font-size: 14px; color: var(--t3);">
-      Also supports: <strong style="color: var(--ink2);">MYOB Â· Wave Â· Sage Â· FreshBooks Â· Odoo Â· CSV export</strong>
+      Also supports: <strong style="color: var(--ink2);">MYOB · Wave · Sage · FreshBooks · Odoo · CSV export</strong>
     </div>
   </div>
 </div>
 
-<!-- â•â•â• PROBLEMS â•â•â• -->
+<!-- ═══ PROBLEMS ═══ -->
 <div class="problems-section">
   <div class="wrap">
     <div class="reveal">
@@ -1387,7 +1387,7 @@ footer {
       <div class="problem-card reveal">
         <div class="pc-num">Problem 02</div>
         <div class="pc-title">Legacy OCR creates more work</div>
-        <div class="pc-desc">Hours mapping charts. Writing if-then rules. And after all that â€” still fixing errors and still missing line items.</div>
+        <div class="pc-desc">Hours mapping charts. Writing if-then rules. And after all that — still fixing errors and still missing line items.</div>
         <div class="pc-quote">By the time we're done mapping, we might as well type it in.</div>
       </div>
       <div class="problem-card reveal">
@@ -1406,7 +1406,7 @@ footer {
   </div>
 </div>
 
-<!-- â•â•â• STATS â•â•â• -->
+<!-- ═══ STATS ═══ -->
 <div class="wrap">
   <section class="stats-section reveal">
     <div class="stats-grid">
@@ -1426,7 +1426,7 @@ footer {
   </section>
 </div>
 
-<!-- â•â•â• CASE STUDIES â•â•â• -->
+<!-- ═══ CASE STUDIES ═══ -->
 <div id="case-studies" class="case-section">
   <div class="wrap">
     <div class="reveal" style="text-align: center">
@@ -1438,12 +1438,12 @@ footer {
       <div class="case-card reveal">
         <div class="case-img c1">RC</div>
         <div class="case-body">
-          <div class="case-tag">Growth Story Â· Sri Lanka</div>
-          <div class="case-title">Rigor Consulting handles 3Ã— more clients with same team</div>
-          <div class="case-result">3Ã— capacity</div>
+          <div class="case-tag">Growth Story · Sri Lanka</div>
+          <div class="case-title">Rigor Consulting handles 3× more clients with same team</div>
+          <div class="case-result">3× capacity</div>
           <div class="case-desc">Previously allocated three team members per three clients. After switching to Sumext, one person manages all three. Added 12 new clients in 4 months without hiring.</div>
           <div class="case-meta">
-            <div class="case-av">ðŸ§‘â€ðŸ’¼</div>
+            <div class="case-av">🧑‍💼</div>
             <div>
               <div class="case-person">Nishantha Kulasuriya</div>
               <div class="case-role">CEO, Rigor Consulting</div>
@@ -1454,12 +1454,12 @@ footer {
       <div class="case-card reveal">
         <div class="case-img c2">KZ</div>
         <div class="case-body">
-          <div class="case-tag">Time Saved Â· Malaysia</div>
+          <div class="case-tag">Time Saved · Malaysia</div>
           <div class="case-title">Klozer cuts invoice time by 75% per client</div>
-          <div class="case-result">4 hrs â†’ 1 hr</div>
-          <div class="case-desc">Processing invoices used to take 3â€“4 hours per client. Now takes 30â€“60 minutes. Team spends the saved time on advisory work and caught two audit risks in the first month.</div>
+          <div class="case-result">4 hrs → 1 hr</div>
+          <div class="case-desc">Processing invoices used to take 3–4 hours per client. Now takes 30–60 minutes. Team spends the saved time on advisory work and caught two audit risks in the first month.</div>
           <div class="case-meta">
-            <div class="case-av">ðŸ‘©â€ðŸ’¼</div>
+            <div class="case-av">👩‍💼</div>
             <div>
               <div class="case-person">Tammy Tan</div>
               <div class="case-role">Bookkeeper, Klozer</div>
@@ -1470,12 +1470,12 @@ footer {
       <div class="case-card reveal">
         <div class="case-img c3">AC</div>
         <div class="case-body">
-          <div class="case-tag">Expansion Â· Philippines</div>
+          <div class="case-tag">Expansion · Philippines</div>
           <div class="case-title">Arass Consultants onboards multi-lingual clients</div>
           <div class="case-result">+40% clients</div>
           <div class="case-desc">Previously rejected clients with Arabic, Chinese, or handwritten documents. Sumext handles all of them natively. Grew client base by 40% in six months by saying yes to everyone.</div>
           <div class="case-meta">
-            <div class="case-av">ðŸ‘¨â€ðŸ’»</div>
+            <div class="case-av">👨‍💻</div>
             <div>
               <div class="case-person">Iqbal Rahman</div>
               <div class="case-role">Director, Arass Consultants</div>
@@ -1487,7 +1487,7 @@ footer {
   </div>
 </div>
 
-<!-- â•â•â• ABOUT â•â•â• -->
+<!-- ═══ ABOUT ═══ -->
 <div id="about" class="about-section">
   <div class="wrap">
     <div class="reveal">
@@ -1496,16 +1496,16 @@ footer {
     </div>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>Sumext was born from watching accountants drown in manual data entry â€” typing the same vendor names and tax codes thousands of times a week, working late to close books, and turning away clients because their team couldn't scale.</p>
-        <p>We believe the future of accounting isn't about replacing accountants with AI. It's about <strong>giving accountants their time back</strong> so they can do what they do best â€” advise clients, catch risks, and build relationships that technology could never replace.</p>
-        <p>We're a small, focused team based across Pakistan, Singapore, and the UK. Every feature we build comes from direct conversations with working bookkeepers and firm owners. If you have feedback, we want to hear it â€” actually.</p>
+        <p>Sumext was born from watching accountants drown in manual data entry — typing the same vendor names and tax codes thousands of times a week, working late to close books, and turning away clients because their team couldn't scale.</p>
+        <p>We believe the future of accounting isn't about replacing accountants with AI. It's about <strong>giving accountants their time back</strong> so they can do what they do best — advise clients, catch risks, and build relationships that technology could never replace.</p>
+        <p>We're a small, focused team based across Pakistan, Singapore, and the UK. Every feature we build comes from direct conversations with working bookkeepers and firm owners. If you have feedback, we want to hear it — actually.</p>
       </div>
       <div class="about-values">
         <div class="about-value">
           <div class="av-num">01</div>
           <div>
             <div class="av-title">Accountants come first</div>
-            <div class="av-desc">Every decision starts with how it impacts the daily work of a real bookkeeper â€” not what looks good in a pitch deck.</div>
+            <div class="av-desc">Every decision starts with how it impacts the daily work of a real bookkeeper — not what looks good in a pitch deck.</div>
           </div>
         </div>
         <div class="about-value">
@@ -1534,27 +1534,27 @@ footer {
   </div>
 </div>
 
-<!-- â•â•â• SUMEXT vs COMPETITORS â•â•â• -->
+<!-- ═══ SUMEXT vs COMPETITORS ═══ -->
 <div id="compare" class="wrap">
   <section class="vs-section">
     <div class="vs-header reveal">
       <div class="section-tag"><span class="section-tag-dot"></span><span class="section-tag-text">Comparisons</span></div>
       <h2>See why firms <em>switch</em><br>to Sumext.</h2>
-      <p class="section-sub" style="margin: 0 auto">Honest comparisons against the tools you're probably using right now. No marketing tricks â€” just the features that matter.</p>
+      <p class="section-sub" style="margin: 0 auto">Honest comparisons against the tools you're probably using right now. No marketing tricks — just the features that matter.</p>
     </div>
     <div class="vs-grid">
       <!-- vs Dext -->
       <div class="vs-card reveal">
         <div class="vs-tag">Sumext vs Dext</div>
         <div class="vs-title">Smarter AI.<br><em>Lower price.</em></div>
-        <div class="vs-desc">Dext pioneered receipt capture â€” but their tech hasn't caught up with modern AI. Still rule-based, still requires 2â€“4 hours of setup per client, still charges per seat.</div>
+        <div class="vs-desc">Dext pioneered receipt capture — but their tech hasn't caught up with modern AI. Still rule-based, still requires 2–4 hours of setup per client, still charges per seat.</div>
         <div class="vs-bullets">
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Self-learning AI (no if-then rules)</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Line item extraction on every invoice</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Unlimited users (no per-seat fees)</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>200+ languages vs Dext's ~30</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Native Tally + Zoho (Dext has neither)</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>$49/month flat vs Dext's $30â€“$50 per user</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Self-learning AI (no if-then rules)</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Line item extraction on every invoice</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Unlimited users (no per-seat fees)</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>200+ languages vs Dext's ~30</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Native Tally + Zoho (Dext has neither)</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>$49/month flat vs Dext's $30–$50 per user</div>
         </div>
         <a href="#" class="vs-link">Read full comparison</a>
       </div>
@@ -1563,14 +1563,14 @@ footer {
       <div class="vs-card reveal">
         <div class="vs-tag">Sumext vs Hubdoc</div>
         <div class="vs-title">Beyond header<br><em>extraction.</em></div>
-        <div class="vs-desc">Hubdoc (included free with Xero) handles simple receipts but struggles with anything complex â€” multi-page invoices, line items, foreign languages, or bank statements.</div>
+        <div class="vs-desc">Hubdoc (included free with Xero) handles simple receipts but struggles with anything complex — multi-page invoices, line items, foreign languages, or bank statements.</div>
         <div class="vs-bullets">
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Full line item detail (Hubdoc is header-only)</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Handles 200-row bank statements effortlessly</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Handwriting + 200+ language support</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Multiple accounting software integrations</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>AI fraud detection built-in</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Auto-splits bulk PDFs into individual docs</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Full line item detail (Hubdoc is header-only)</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Handles 200-row bank statements effortlessly</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Handwriting + 200+ language support</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Multiple accounting software integrations</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>AI fraud detection built-in</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Auto-splits bulk PDFs into individual docs</div>
         </div>
         <a href="#" class="vs-link">Read full comparison</a>
       </div>
@@ -1579,14 +1579,14 @@ footer {
       <div class="vs-card reveal">
         <div class="vs-tag">Sumext vs Tofu</div>
         <div class="vs-title">More sync.<br><em>Wider reach.</em></div>
-        <div class="vs-desc">Tofu does bookkeeping automation well â€” but only syncs with Xero and QuickBooks. Sumext covers the global market including India, Pakistan, and Middle East firms that use Tally and Zoho.</div>
+        <div class="vs-desc">Tofu does bookkeeping automation well — but only syncs with Xero and QuickBooks. Sumext covers the global market including India, Pakistan, and Middle East firms that use Tally and Zoho.</div>
         <div class="vs-bullets">
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Native Tally integration (first in market)</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Zoho Books sync (full GST compliance)</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>MYOB integration for ANZ firms</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Chat with documents feature</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>WhatsApp document intake</div>
-          <div class="vs-bullet"><span class="vs-check">âœ“</span>Regional support in 8 languages</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Native Tally integration (first in market)</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Zoho Books sync (full GST compliance)</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>MYOB integration for ANZ firms</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Chat with documents feature</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>WhatsApp document intake</div>
+          <div class="vs-bullet"><span class="vs-check">✓</span>Regional support in 8 languages</div>
         </div>
         <a href="#" class="vs-link">Read full comparison</a>
       </div>
@@ -1594,7 +1594,7 @@ footer {
   </section>
 </div>
 
-<!-- â•â•â• SUPPORT â•â•â• -->
+<!-- ═══ SUPPORT ═══ -->
 <div id="support" class="wrap">
   <section class="support-section">
     <div class="reveal" style="text-align: center">
@@ -1604,19 +1604,19 @@ footer {
     </div>
     <div class="support-grid">
       <div class="support-card reveal">
-        <div class="support-icon">ðŸ“š</div>
+        <div class="support-icon">📚</div>
         <div class="support-title">Help Center</div>
         <div class="support-desc">Step-by-step guides, integration tutorials, and FAQs for every feature. Search and find answers in seconds.</div>
         <a href="#" class="support-action">Browse articles</a>
       </div>
       <div class="support-card reveal">
-        <div class="support-icon">ðŸ’¬</div>
+        <div class="support-icon">💬</div>
         <div class="support-title">Live Chat & Email</div>
-        <div class="support-desc">Real humans ready to help â€” not chatbots. Priority support included with Pro plan. Average response: under 2 hours.</div>
+        <div class="support-desc">Real humans ready to help — not chatbots. Priority support included with Pro plan. Average response: under 2 hours.</div>
         <a href="#" class="support-action">Contact support</a>
       </div>
       <div class="support-card reveal">
-        <div class="support-icon">ðŸ› ï¸</div>
+        <div class="support-icon">🛠️</div>
         <div class="support-title">API Documentation</div>
         <div class="support-desc">Build custom workflows on top of Sumext. REST API, webhooks, and SDKs in Python, Node, and PHP.</div>
         <a href="#" class="support-action">Read the docs</a>
@@ -1625,9 +1625,9 @@ footer {
   </section>
 </div>
 
-<!-- â•â•â• PRICING â•â•â• -->
+<!-- ═══ PRICING ═══ -->
 <style>
-/* â”€â”€ Pricing extras â”€â”€ */
+/* ── Pricing extras ── */
 .trial-banner {
   background: linear-gradient(135deg, var(--amber-dim) 0%, #fff8f4 100%);
   border: 1px solid rgba(194,65,12,0.2);
@@ -1782,10 +1782,10 @@ footer {
 
     <!-- Trial banner -->
     <div class="trial-banner reveal">
-      <span class="tb-icon">ðŸŽ</span>
+      <span class="tb-icon">🎁</span>
       <div class="tb-body">
         <div class="tb-title">14-Day Free Trial on Every Plan</div>
-        <div class="tb-desc">Full access to everything â€” no credit card, no commitment. Includes 3 contractor seats to test the full workflow. See exactly how Sumext transforms your bookkeeping before paying a cent.</div>
+        <div class="tb-desc">Full access to everything — no credit card, no commitment. Includes 3 contractor seats to test the full workflow. See exactly how Sumext transforms your bookkeeping before paying a cent.</div>
       </div>
       <span class="tb-badge">NO CREDIT CARD</span>
     </div>
@@ -1811,13 +1811,13 @@ footer {
         <div class="pcn-vol">No credit card required</div>
         <div class="price-div-new"></div>
         <div class="pf-list-new">
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Up to 50 test documents</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>All accounting integrations</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>200+ languages</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>AI ledger suggestion</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>1 team member only</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>3 contractor seats (trial)</div>
-          <div class="pf-item-new pf-dim"><span class="pf-ok-new">â€”</span>WhatsApp notifications</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Up to 50 test documents</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>All accounting integrations</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>200+ languages</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>AI ledger suggestion</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>1 team member only</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>3 contractor seats (trial)</div>
+          <div class="pf-item-new pf-dim"><span class="pf-ok-new">—</span>WhatsApp notifications</div>
         </div>
         <a href="https://app.sumext.com/signup" class="price-btn-new outline">Start Free Trial</a>
       </div>
@@ -1830,18 +1830,18 @@ footer {
           <span class="pcn-num" id="soloPrice">19</span>
         </div>
         <div class="pcn-per">per month</div>
-        <div class="pcn-annual" id="soloAnnual">Billed $182/year â€” save $46</div>
+        <div class="pcn-annual" id="soloAnnual">Billed $182/year — save $46</div>
         <div class="pcn-vol">300 documents / month</div>
         <div class="price-div-new"></div>
         <div class="pf-list-new">
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>300 documents/month</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>2 team members</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Xero + QuickBooks sync</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>AI self-learning rules</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Fraud detection</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>WhatsApp notifications</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Add contractors at $5/seat</div>
-          <div class="pf-item-new pf-dim"><span class="pf-ok-new">â€”</span>Zoho / Tally sync</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>300 documents/month</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>2 team members</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Xero + QuickBooks sync</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>AI self-learning rules</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Fraud detection</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>WhatsApp notifications</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Add contractors at $5/seat</div>
+          <div class="pf-item-new pf-dim"><span class="pf-ok-new">—</span>Zoho / Tally sync</div>
         </div>
         <a href="https://app.sumext.com/signup?plan=solo" class="price-btn-new outline">Try Free for 14 Days</a>
       </div>
@@ -1854,20 +1854,20 @@ footer {
           <span class="pcn-num" id="teamPrice">49</span>
         </div>
         <div class="pcn-per">per month</div>
-        <div class="pcn-annual" id="teamAnnual">Billed $470/year â€” save $118</div>
+        <div class="pcn-annual" id="teamAnnual">Billed $470/year — save $118</div>
         <div class="pcn-vol">2,000 documents / month</div>
         <div class="price-div-new"></div>
         <div class="pf-list-new">
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>2,000 documents/month</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>5 team members</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>All integrations (Xero, QB, Zoho, Tally)</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>5 contractor seats included</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>WhatsApp notifications (team + contractors)</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Email ingestion inbox</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Chat with documents</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Priority support</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>2,000 documents/month</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>5 team members</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>All integrations (Xero, QB, Zoho, Tally)</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>5 contractor seats included</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>WhatsApp notifications (team + contractors)</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Email ingestion inbox</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Chat with documents</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Priority support</div>
         </div>
-        <a href="https://app.sumext.com/signup?plan=team" class="price-btn-new dark">Try Free for 14 Days â†’</a>
+        <a href="https://app.sumext.com/signup?plan=team" class="price-btn-new dark">Try Free for 14 Days →</a>
       </div>
 
       <!-- Firm -->
@@ -1878,18 +1878,18 @@ footer {
           <span class="pcn-num" id="firmPrice">99</span>
         </div>
         <div class="pcn-per">per month</div>
-        <div class="pcn-annual" id="firmAnnual">Billed $950/year â€” save $238</div>
+        <div class="pcn-annual" id="firmAnnual">Billed $950/year — save $238</div>
         <div class="pcn-vol">Unlimited documents</div>
         <div class="price-div-new"></div>
         <div class="pf-list-new">
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Unlimited documents</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Unlimited team members</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Unlimited contractors</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>All integrations + MYOB</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>WhatsApp notifications (everyone)</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Client portal</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>White-label option</div>
-          <div class="pf-item-new"><span class="pf-ok-new">âœ“</span>Dedicated account manager</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Unlimited documents</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Unlimited team members</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Unlimited contractors</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>All integrations + MYOB</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>WhatsApp notifications (everyone)</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Client portal</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>White-label option</div>
+          <div class="pf-item-new"><span class="pf-ok-new">✓</span>Dedicated account manager</div>
         </div>
         <a href="https://app.sumext.com/signup?plan=firm" class="price-btn-new outline">Try Free for 14 Days</a>
       </div>
@@ -1910,14 +1910,14 @@ footer {
         <tbody>
           <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Documents / month</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; font-family:var(--fm); font-size:12px;">300</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; font-family:var(--fm); font-size:12px; color:var(--amber); font-weight:700;">2,000</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; font-family:var(--fm); font-size:12px;">Unlimited</td></tr>
           <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Team members</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t2);">2</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center;">5</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center;">Unlimited</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Xero + QuickBooks</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Zoho Books + Tally</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Xero + QuickBooks</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Zoho Books + Tally</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
           <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Contractor portal</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t2); font-size:12px;">Add-on $5/seat</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t2); font-size:12px;">5 included</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center;">Unlimited</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">WhatsApp notifications</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Email ingestion inbox</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Chat with documents</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Client portal</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
-          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">White-label</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">â€”</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">âœ“</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">WhatsApp notifications</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Email ingestion inbox</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Chat with documents</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">Client portal</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
+          <tr><td style="padding:12px 16px; border-bottom:1px solid var(--line); font-weight:600;">White-label</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--t4);">—</td><td style="padding:12px; border-bottom:1px solid var(--line); text-align:center; color:var(--sage); font-weight:700;">✓</td></tr>
           <tr><td style="padding:12px 16px; font-weight:600;">Support</td><td style="padding:12px; text-align:center; color:var(--t2); font-size:12px;">Email</td><td style="padding:12px; text-align:center; color:var(--t2); font-size:12px;">Priority</td><td style="padding:12px; text-align:center; color:var(--t2); font-size:12px;">Dedicated</td></tr>
         </tbody>
       </table>
@@ -1944,7 +1944,7 @@ footer {
     <div class="faq-grid">
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">What happens after my 14-day trial? <span class="faq-icon">+</span></div>
-        <div class="faq-a">After 14 days you'll be prompted to choose a paid plan. If you don't upgrade, your account switches to read-only â€” you can still view past documents but cannot process new ones. No charges until you choose a plan.</div>
+        <div class="faq-a">After 14 days you'll be prompted to choose a paid plan. If you don't upgrade, your account switches to read-only — you can still view past documents but cannot process new ones. No charges until you choose a plan.</div>
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Can I switch plans anytime? <span class="faq-icon">+</span></div>
@@ -1972,28 +1972,28 @@ footer {
       </div>
       <div class="faq-item reveal" onclick="toggleFaq(this)">
         <div class="faq-q">Do you offer annual billing? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes â€” toggle to annual billing above and save 20% across all plans. Annual billing is charged once per year. Solo annual: $182. Team annual: $470. Firm annual: $950. You can switch back to monthly at renewal.</div>
+        <div class="faq-a">Yes — toggle to annual billing above and save 20% across all plans. Annual billing is charged once per year. Solo annual: $182. Team annual: $470. Firm annual: $950. You can switch back to monthly at renewal.</div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- â•â•â• CTA â•â•â• -->
+<!-- ═══ CTA ═══ -->
 <div class="wrap">
   <section class="cta-section reveal">
     <div class="cta-box">
       <div class="section-tag"><span class="section-tag-dot"></span><span class="section-tag-text">Start Today</span></div>
       <h2>See Sumext process<br>your <em>actual documents.</em></h2>
-      <p>Upload a few real invoices in any language, any format. Watch them land in your accounting software, categorized and ready to review â€” in under a minute.</p>
+      <p>Upload a few real invoices in any language, any format. Watch them land in your accounting software, categorized and ready to review — in under a minute.</p>
       <div class="cta-btns">
-        <a href="https://app.sumext.com/signup" class="btn-lg primary">Start Free Trial <span class="btn-arrow">â†’</span></a>
+        <a href="https://app.sumext.com/signup" class="btn-lg primary">Start Free Trial <span class="btn-arrow">→</span></a>
         <a href="#" class="btn-lg ghost">Book a Demo</a>
       </div>
     </div>
   </section>
 </div>
 
-<!-- â•â•â• FOOTER â•â•â• -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-wrap">
     <div class="footer-grid">
@@ -2042,7 +2042,7 @@ footer {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Â© 2026 Sumext. Made with care for bookkeepers.</span>
+      <span>© 2026 Sumext. Made with care for bookkeepers.</span>
       <div class="fb-links">
         <a href="https://app.sumext.com/privacy" target="_blank">Privacy Policy</a>
         <a href="https://app.sumext.com/terms" target="_blank">Terms of Service</a>
@@ -2052,10 +2052,10 @@ footer {
   </div>
 </footer>
 
-<!-- â•â•â• WAITLIST MODAL â•â•â• -->
+<!-- ═══ WAITLIST MODAL ═══ -->
 <div class="modal-backdrop" id="waitlistModal" onclick="if(event.target===this)closeModal()">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()" aria-label="Close">âœ•</button>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
 
     <!-- Form view -->
     <div id="modalForm">
@@ -2097,12 +2097,12 @@ footer {
         </div>
         <label class="field-checkbox">
           <input type="checkbox" id="wl-beta" name="early_beta" value="Yes">
-          <label for="wl-beta">I'd like <strong>early beta access</strong> â€” free for the first 3 months</label>
+          <label for="wl-beta">I'd like <strong>early beta access</strong> — free for the first 3 months</label>
         </label>
 
         <button type="submit" class="modal-submit" id="submitBtn">
           <div class="spinner-w"></div>
-          <span class="submit-text">Request Access â†’</span>
+          <span class="submit-text">Request Access →</span>
         </button>
         <div class="modal-note">No spam. We'll only email you about Sumext.</div>
         <div class="modal-note" style="margin-top:8px;">
@@ -2116,7 +2116,7 @@ footer {
 
     <!-- Success view -->
     <div class="modal-success" id="modalSuccess">
-      <div class="success-icon">âœ“</div>
+      <div class="success-icon">✓</div>
       <h3 class="success-title">You're <em>in!</em></h3>
       <p class="success-msg">We just received your request. <strong>Saeed will personally reach out within 24 hours</strong> with your beta access and a quick walkthrough.</p>
       <p class="success-msg" style="font-size: 13px;">Meanwhile, follow us on LinkedIn for product updates.</p>
@@ -2128,11 +2128,11 @@ footer {
 </div>
 
 <script>
-// â•â•â• DEMO SYSTEM - Now works with simulation fallback â•â•â•
+// ═══ DEMO SYSTEM - Now works with simulation fallback ═══
 
 const docs = {
   invoice: {
-    preview: `<div class="doc-head"><div class="doc-co">Nexus <em>Solutions</em> Ltd.</div><div class="doc-addr">47 Commerce Street, London EC2V 8RT</div></div><div class="doc-meta"><div class="doc-mi"><strong>Invoice #:</strong> INV-2024-00892</div><div class="doc-mi"><strong>Date:</strong> 14 Nov 2024</div><div class="doc-mi"><strong>Bill To:</strong> Bright Digital</div><div class="doc-mi"><strong>Due:</strong> 14 Dec 2024</div></div><table class="doc-tbl"><thead><tr><th>Item</th><th>Qty</th><th>Rate</th><th>Amount</th></tr></thead><tbody><tr><td>Software Development</td><td>40h</td><td>Â£95</td><td>Â£3,800</td></tr><tr><td>UI/UX Design</td><td>12h</td><td>Â£85</td><td>Â£1,020</td></tr><tr><td>Server Setup</td><td>1</td><td>Â£650</td><td>Â£650</td></tr><tr><td>Project Management</td><td>8h</td><td>Â£75</td><td>Â£600</td></tr></tbody></table><div class="doc-meta"><div class="doc-mi"><strong>Subtotal:</strong> Â£6,070</div><div class="doc-mi"><strong>VAT (20%):</strong> Â£1,214</div></div><div class="doc-total"><div class="doc-total-box">TOTAL Â£7,284.00</div></div>`,
+    preview: `<div class="doc-head"><div class="doc-co">Nexus <em>Solutions</em> Ltd.</div><div class="doc-addr">47 Commerce Street, London EC2V 8RT</div></div><div class="doc-meta"><div class="doc-mi"><strong>Invoice #:</strong> INV-2024-00892</div><div class="doc-mi"><strong>Date:</strong> 14 Nov 2024</div><div class="doc-mi"><strong>Bill To:</strong> Bright Digital</div><div class="doc-mi"><strong>Due:</strong> 14 Dec 2024</div></div><table class="doc-tbl"><thead><tr><th>Item</th><th>Qty</th><th>Rate</th><th>Amount</th></tr></thead><tbody><tr><td>Software Development</td><td>40h</td><td>£95</td><td>£3,800</td></tr><tr><td>UI/UX Design</td><td>12h</td><td>£85</td><td>£1,020</td></tr><tr><td>Server Setup</td><td>1</td><td>£650</td><td>£650</td></tr><tr><td>Project Management</td><td>8h</td><td>£75</td><td>£600</td></tr></tbody></table><div class="doc-meta"><div class="doc-mi"><strong>Subtotal:</strong> £6,070</div><div class="doc-mi"><strong>VAT (20%):</strong> £1,214</div></div><div class="doc-total"><div class="doc-total-box">TOTAL £7,284.00</div></div>`,
     output: [
       { key: 'document_type', val: 'Invoice', conf: 99 },
       { key: 'vendor_name', val: 'Nexus Solutions Ltd.', conf: 99 },
@@ -2142,15 +2142,15 @@ const docs = {
       { key: 'due_date', val: '2024-12-14', conf: 99 },
       { key: 'bill_to', val: 'Bright Digital Ltd.', conf: 98 },
       { key: 'line_items_count', val: '4 items extracted', conf: 100 },
-      { key: 'subtotal', val: 'Â£6,070.00', conf: 100 },
-      { key: 'vat_amount', val: 'Â£1,214.00 (20%)', conf: 99 },
-      { key: 'total_amount', val: 'Â£7,284.00', conf: 100 },
+      { key: 'subtotal', val: '£6,070.00', conf: 100 },
+      { key: 'vat_amount', val: '£1,214.00 (20%)', conf: 99 },
+      { key: 'total_amount', val: '£7,284.00', conf: 100 },
       { key: 'currency', val: 'GBP', conf: 100 },
       { key: 'fraud_flag', val: false, conf: 96 }
     ]
   },
   receipt: {
-    preview: `<div class="doc-head"><div class="doc-co">Starbucks <em>Coffee</em></div><div class="doc-addr">Westfield London W12 7GF</div></div><div class="doc-meta"><div class="doc-mi"><strong>Date:</strong> 14 Nov 2024</div><div class="doc-mi"><strong>Time:</strong> 09:47</div><div class="doc-mi"><strong>Receipt:</strong> RCP-0892</div><div class="doc-mi"><strong>Server:</strong> Emma</div></div><table class="doc-tbl"><thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead><tbody><tr><td>Grande Latte</td><td>2</td><td>Â£9.80</td></tr><tr><td>Blueberry Muffin</td><td>1</td><td>Â£3.25</td></tr><tr><td>Loyalty Discount</td><td></td><td>-Â£1.00</td></tr></tbody></table><div class="doc-meta"><div class="doc-mi"><strong>Subtotal:</strong> Â£12.05</div><div class="doc-mi"><strong>VAT (20%):</strong> Â£2.01</div></div><div class="doc-total"><div class="doc-total-box">TOTAL Â£14.06</div></div>`,
+    preview: `<div class="doc-head"><div class="doc-co">Starbucks <em>Coffee</em></div><div class="doc-addr">Westfield London W12 7GF</div></div><div class="doc-meta"><div class="doc-mi"><strong>Date:</strong> 14 Nov 2024</div><div class="doc-mi"><strong>Time:</strong> 09:47</div><div class="doc-mi"><strong>Receipt:</strong> RCP-0892</div><div class="doc-mi"><strong>Server:</strong> Emma</div></div><table class="doc-tbl"><thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead><tbody><tr><td>Grande Latte</td><td>2</td><td>£9.80</td></tr><tr><td>Blueberry Muffin</td><td>1</td><td>£3.25</td></tr><tr><td>Loyalty Discount</td><td></td><td>-£1.00</td></tr></tbody></table><div class="doc-meta"><div class="doc-mi"><strong>Subtotal:</strong> £12.05</div><div class="doc-mi"><strong>VAT (20%):</strong> £2.01</div></div><div class="doc-total"><div class="doc-total-box">TOTAL £14.06</div></div>`,
     output: [
       { key: 'document_type', val: 'Receipt', conf: 100 },
       { key: 'merchant_name', val: 'Starbucks Coffee', conf: 99 },
@@ -2158,9 +2158,9 @@ const docs = {
       { key: 'receipt_number', val: 'RCP-0892', conf: 100 },
       { key: 'date_time', val: '2024-11-14 09:47', conf: 99 },
       { key: 'line_items_count', val: '3 items extracted', conf: 100 },
-      { key: 'subtotal', val: 'Â£12.05', conf: 100 },
-      { key: 'tax_amount', val: 'Â£2.01 (20%)', conf: 99 },
-      { key: 'total_amount', val: 'Â£14.06', conf: 100 },
+      { key: 'subtotal', val: '£12.05', conf: 100 },
+      { key: 'tax_amount', val: '£2.01 (20%)', conf: 99 },
+      { key: 'total_amount', val: '£14.06', conf: 100 },
       { key: 'payment_method', val: 'Visa card', conf: 98 },
       { key: 'card_last_four', val: '****4521', conf: 97 },
       { key: 'category_suggested', val: 'Staff Entertainment', conf: 92 },
@@ -2168,7 +2168,7 @@ const docs = {
     ]
   },
   bank: {
-    preview: `<div class="doc-head"><div class="doc-co">Barclays <em>Business</em></div><div class="doc-addr">Statement â€” October 2024 Â· Bright Digital Ltd.</div></div><div class="doc-meta"><div class="doc-mi"><strong>Sort:</strong> 20-44-53</div><div class="doc-mi"><strong>Account:</strong> 83749201</div></div><table class="doc-tbl"><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>03 Oct</td><td>AWS Direct Debit</td><td>Â£234.50</td><td></td></tr><tr><td>07 Oct</td><td>BACS â€” Client A</td><td></td><td>Â£8,500</td></tr><tr><td>15 Oct</td><td>Payroll</td><td>Â£6,200</td><td></td></tr><tr><td>22 Oct</td><td>BACS â€” Client B</td><td></td><td>Â£3,200</td></tr><tr><td>28 Oct</td><td>Office Rent</td><td>Â£1,800</td><td></td></tr></tbody></table><div class="doc-meta"><div class="doc-mi"><strong>Opening:</strong> Â£12,450</div><div class="doc-mi"><strong>Closing:</strong> Â£15,901.44</div></div>`,
+    preview: `<div class="doc-head"><div class="doc-co">Barclays <em>Business</em></div><div class="doc-addr">Statement — October 2024 · Bright Digital Ltd.</div></div><div class="doc-meta"><div class="doc-mi"><strong>Sort:</strong> 20-44-53</div><div class="doc-mi"><strong>Account:</strong> 83749201</div></div><table class="doc-tbl"><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>03 Oct</td><td>AWS Direct Debit</td><td>£234.50</td><td></td></tr><tr><td>07 Oct</td><td>BACS — Client A</td><td></td><td>£8,500</td></tr><tr><td>15 Oct</td><td>Payroll</td><td>£6,200</td><td></td></tr><tr><td>22 Oct</td><td>BACS — Client B</td><td></td><td>£3,200</td></tr><tr><td>28 Oct</td><td>Office Rent</td><td>£1,800</td><td></td></tr></tbody></table><div class="doc-meta"><div class="doc-mi"><strong>Opening:</strong> £12,450</div><div class="doc-mi"><strong>Closing:</strong> £15,901.44</div></div>`,
     output: [
       { key: 'document_type', val: 'Bank Statement', conf: 100 },
       { key: 'bank_name', val: 'Barclays Business Banking', conf: 100 },
@@ -2176,17 +2176,17 @@ const docs = {
       { key: 'sort_code', val: '20-44-53', conf: 100 },
       { key: 'account_number', val: '83749201', conf: 100 },
       { key: 'statement_period', val: 'October 2024', conf: 100 },
-      { key: 'opening_balance', val: 'Â£12,450.00', conf: 100 },
-      { key: 'closing_balance', val: 'Â£15,901.44', conf: 100 },
+      { key: 'opening_balance', val: '£12,450.00', conf: 100 },
+      { key: 'closing_balance', val: '£15,901.44', conf: 100 },
       { key: 'transactions_count', val: '5 transactions extracted', conf: 100 },
-      { key: 'total_debits', val: 'Â£8,248.56', conf: 100 },
-      { key: 'total_credits', val: 'Â£11,700.00', conf: 100 },
+      { key: 'total_debits', val: '£8,248.56', conf: 100 },
+      { key: 'total_credits', val: '£11,700.00', conf: 100 },
       { key: 'currency', val: 'GBP', conf: 100 },
       { key: 'fraud_flag', val: false, conf: 97 }
     ]
   },
   contract: {
-    preview: `<div class="doc-head"><div class="doc-co">Non-Disclosure <em>Agreement</em></div><div class="doc-addr">Executed November 1, 2024</div></div><div style="font-size:12px;line-height:1.9;color:var(--t2)"><p style="margin-bottom:8px"><strong style="color:var(--ink)">BETWEEN:</strong> Nexus Solutions Ltd., London EC2V 8RT (Disclosing Party)</p><p style="margin-bottom:8px"><strong style="color:var(--ink)">AND:</strong> Bright Digital Ltd., London W1U 3BW (Receiving Party)</p><br><p><strong style="color:var(--ink)">1. TERM:</strong> Nov 1 2024 â€“ Nov 1 2027 (3 years)</p><p><strong style="color:var(--ink)">2. GOVERNING LAW:</strong> England & Wales</p><p><strong style="color:var(--ink)">3. LIABILITY CAP:</strong> Â£50,000 per incident</p><p><strong style="color:var(--ink)">4. RENEWAL NOTICE:</strong> 30 days written</p></div>`,
+    preview: `<div class="doc-head"><div class="doc-co">Non-Disclosure <em>Agreement</em></div><div class="doc-addr">Executed November 1, 2024</div></div><div style="font-size:12px;line-height:1.9;color:var(--t2)"><p style="margin-bottom:8px"><strong style="color:var(--ink)">BETWEEN:</strong> Nexus Solutions Ltd., London EC2V 8RT (Disclosing Party)</p><p style="margin-bottom:8px"><strong style="color:var(--ink)">AND:</strong> Bright Digital Ltd., London W1U 3BW (Receiving Party)</p><br><p><strong style="color:var(--ink)">1. TERM:</strong> Nov 1 2024 – Nov 1 2027 (3 years)</p><p><strong style="color:var(--ink)">2. GOVERNING LAW:</strong> England & Wales</p><p><strong style="color:var(--ink)">3. LIABILITY CAP:</strong> £50,000 per incident</p><p><strong style="color:var(--ink)">4. RENEWAL NOTICE:</strong> 30 days written</p></div>`,
     output: [
       { key: 'document_type', val: 'Non-Disclosure Agreement', conf: 100 },
       { key: 'disclosing_party', val: 'Nexus Solutions Ltd.', conf: 99 },
@@ -2197,7 +2197,7 @@ const docs = {
       { key: 'expiry_date', val: '2027-11-01', conf: 100 },
       { key: 'term_years', val: '3 years', conf: 100 },
       { key: 'governing_law', val: 'England & Wales', conf: 99 },
-      { key: 'liability_cap', val: 'Â£50,000 per incident', conf: 99 },
+      { key: 'liability_cap', val: '£50,000 per incident', conf: 99 },
       { key: 'renewal_notice_days', val: '30 days written notice', conf: 99 },
       { key: 'fraud_flag', val: false, conf: 97 }
     ]
@@ -2239,12 +2239,12 @@ function runExtraction() {
 
   const start = Date.now();
 
-  // Simulate AI processing time (realistic 800msâ€“1.4s)
+  // Simulate AI processing time (realistic 800ms–1.4s)
   const processTime = 800 + Math.random() * 600;
 
   setTimeout(() => {
     const ms = Date.now() - start;
-    time.textContent = `âœ“ Extracted in ${ms}ms`;
+    time.textContent = `✓ Extracted in ${ms}ms`;
     time.classList.add('visible');
     fields.style.display = 'flex';
 
@@ -2263,7 +2263,7 @@ function runExtraction() {
 
         if (isFraud) {
           const clean = field.val === false;
-          el.innerHTML = `<div class="field-key">${label}</div><div class="field-val"><span class="fraud-chip ${clean?'clean':'bad'}">${clean?'âœ“ None Detected':'âš  Flagged'}</span></div>`;
+          el.innerHTML = `<div class="field-key">${label}</div><div class="field-val"><span class="fraud-chip ${clean?'clean':'bad'}">${clean?'✓ None Detected':'⚠ Flagged'}</span></div>`;
         } else {
           el.innerHTML = `<div class="field-key">${label}</div><div class="field-val">${field.val}</div><div class="field-conf"><div class="conf-track"><div class="conf-fill ${cls}" style="width:${pct}%"></div></div><span class="conf-pct ${cls}">${pct}%</span></div>`;
         }
@@ -2287,7 +2287,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 // Run init
 init();
 
-// â•â•â• MODAL SYSTEM â•â•â•
+// ═══ MODAL SYSTEM ═══
 function openModal() {
   document.getElementById('waitlistModal').classList.add('open');
   document.getElementById('modalForm').style.display = 'block';
@@ -2337,7 +2337,7 @@ async function submitForm(e) {
     alert('Something went wrong. Please try again or email us directly.');
     btn.disabled = false;
     btn.classList.remove('loading');
-    document.querySelector('.submit-text').textContent = 'Request Access â†’';
+    document.querySelector('.submit-text').textContent = 'Request Access →';
   }
 }
 
@@ -2370,7 +2370,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// â”€â”€ Billing toggle
+// ── Billing toggle
 let isAnnual = false;
 function toggleBilling() {
   isAnnual = !isAnnual;
@@ -2402,7 +2402,7 @@ function toggleBilling() {
   }
 }
 
-// â”€â”€ FAQ toggle
+// ── FAQ toggle
 function toggleFaq(item) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
