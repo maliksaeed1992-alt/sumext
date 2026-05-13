@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -45,6 +45,35 @@
     .fine { margin-top: 28px; color: var(--muted); font-size: 13px; line-height: 1.6; }
     @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } header { position: static; } }
   </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KVGRQB43QB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KVGRQB43QB');
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (!link || typeof gtag !== 'function') return;
+
+    var href = link.getAttribute('href') || '';
+    var text = (link.textContent || '').trim().toLowerCase();
+    var eventName = '';
+
+    if (href.indexOf('app.sumext.com/signup') !== -1) eventName = 'signup_click';
+    else if (href.indexOf('/upgrade') !== -1 || href.indexOf('#pricing') !== -1 || text.indexOf('pricing') !== -1) eventName = 'pricing_click';
+    else if (href.indexOf('#demo') !== -1 || text.indexOf('demo') !== -1) eventName = 'demo_click';
+    else if (href.indexOf('app.sumext.com') !== -1) eventName = 'app_outbound_click';
+
+    if (eventName) {
+      gtag('event', eventName, {
+        link_url: link.href,
+        link_text: (link.textContent || '').trim()
+      });
+    }
+  });
+</script>
 </head>
 <body>
   <header>
@@ -241,3 +270,4 @@
   </script>
 </body>
 </html>
+
